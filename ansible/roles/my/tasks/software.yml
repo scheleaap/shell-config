@@ -1,0 +1,30 @@
+---
+- name: "Install additional packages"
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - htop
+    - joe
+- name: "Install Atom"
+  apt:
+    deb: https://atom.io/download/deb
+- name: Ensure /home/{{ user_username }}/.atom exists
+  file:
+    path: /home/{{ user_username }}/.atom
+    state: directory
+    owner: "{{ user_username }}"
+    group: "{{ user_username }}"
+- name: "Configure Atom plugin markdown-preview"
+  blockinfile:
+    dest: /home/{{ user_username }}/.atom/styles.less
+    create: yes
+    owner: "{{ user_username }}"
+    group: "{{ user_username }}"
+    marker: "// {mark} ANSIBLE MANAGED BLOCK - markdown-preview"
+    block: |
+      .markdown-preview,
+      .markdown-preview[data-use-github-style] {
+        table, table tr, table tr:nth-child(even), table td {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }

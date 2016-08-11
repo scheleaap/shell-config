@@ -1,0 +1,11 @@
+---
+- name: "Create group"
+  group:
+    name: "{{ user_username }}"
+- name: "Create user"
+  user:
+    name: "{{ user_username }}"
+    comment: "{{ user_full_name }}"
+    groups: "{{ user_username }},adm,sudo"
+    append: yes
+    createhome: yes

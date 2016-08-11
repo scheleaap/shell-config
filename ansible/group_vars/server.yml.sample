@@ -1,0 +1,5 @@
+---
+user_username: user1
+user_email: user@example.com
+user_full_name: I Am
+git_cache_timeout: 32400

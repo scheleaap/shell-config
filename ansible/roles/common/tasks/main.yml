@@ -1,0 +1,26 @@
+---
+- name: "Print debug info"
+  debug:
+    msg: "Configuring role 'common' for user '{{ user_username }}'"
+- include: user.yml
+- name: "Refresh apt cache"
+  apt:
+    update_cache: true
+- name: "Install base packages"
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - vim
+    - curl
+    - wget
+    - pidgin
+    - chromium-browser
+    - git
+    - ssh
+- name: "Install Java"
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - openjdk-8-jdk
+    - openjdk-8-jre
+    - icedtea-8-plugin

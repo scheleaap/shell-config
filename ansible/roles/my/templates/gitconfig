@@ -1,0 +1,15 @@
+[credential]
+	helper = cache --timeout={{ git_cache_timeout }}
+[user]
+	email = {{ user_email }}
+	name = {{ user_full_name }}
+[push]
+	default = simple
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+[core]
+	editor = atom --wait

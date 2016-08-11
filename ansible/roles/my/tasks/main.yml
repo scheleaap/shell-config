@@ -1,0 +1,21 @@
+---
+- name: "Print debug info"
+  debug:
+    msg: "Configuring role 'wout' for user '{{ user_username }}'"
+- include: keyboard.yml
+- include: software.yml
+- include: gtk.yml
+- include: pidgin.yml
+# wout: Disabled because it overwrites any changes made to PATH and exports configured by other Ansible tasks.
+#- name: ".bash_aliases"
+#  copy:
+#    src: bash_aliases
+#    dest: /home/{{ user_username }}/.bash_aliases
+#    owner: "{{ user_username }}"
+#    group: "{{ user_username }}"
+- name: ".gitconfig"
+  template:
+    src: gitconfig
+    dest: /home/{{ user_username }}/.gitconfig
+    owner: "{{ user_username }}"
+    group: "{{ user_username }}"

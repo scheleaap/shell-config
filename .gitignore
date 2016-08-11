@@ -1,0 +1,4 @@
+.vagrant
+ansible/group_vars/server.yml
+*.log
+*.retry

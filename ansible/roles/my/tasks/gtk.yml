@@ -1,0 +1,39 @@
+---
+- name: "Always show menus in Ubuntu"
+  shell: "gsettings set com.canonical.Unity always-show-menus true"
+- name: "Use local menus in Ubuntu"
+  shell: "gsettings set com.canonical.Unity integrated-menus false"
+- name: Ensure /home/{{ user_username }}/.config/gtk-3.0 exists
+  file:
+    path: /home/{{ user_username }}/.config/gtk-3.0
+    state: directory
+    owner: "{{ user_username }}"
+    group: "{{ user_username }}"
+- name: "Make tabs in gnome-terminal easier to distinguish"
+  blockinfile:
+    dest: /home/{{ user_username }}/.config/gtk-3.0/gtk.css
+    create: yes
+    owner: "{{ user_username }}"
+    group: "{{ user_username }}"
+    marker: "/* {mark} ANSIBLE MANAGED BLOCK - gnome-terminal tabs */"
+    block: |
+      TerminalWindow,
+      TerminalWindow.background {
+          background-image: none;
+          background-color: @dark_bg_color;
+          color: @dark_fg_color;
+      }
+      TerminalWindow .notebook {
+          border: 0;
+          padding: 0;
+      }
+      TerminalWindow .notebook tab.top:active {
+          border-image: none;
+          background-color: alpha(white, 0.4);
+      }
+      TerminalWindow .notebook tab.top {
+          border-width: 0;
+          background-image: none;
+          background-color: @dark_b!g_color;
+          color: gray;
+      }

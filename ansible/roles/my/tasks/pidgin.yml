@@ -1,0 +1,14 @@
+---
+- name: "Send messages with Ctrl+Enter instead of Enter"
+  blockinfile:
+    dest: /home/{{ user_username }}/.gtkrc-2.0
+    create: yes
+    owner: "{{ user_username }}"
+    group: "{{ user_username }}"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK - Pidgin Ctrl+Enter"
+    block: |
+      binding "piding-bindings-wout" {
+          bind "Return" { "insert-at-cursor" ("\n") }
+          bind "<ctrl>Return" { "message_send" () }
+      }
+      widget "*pidgin_conv_entry" binding "piding-bindings-wout"
