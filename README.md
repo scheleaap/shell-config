@@ -1,5 +1,12 @@
 # env-config
 
+## Getting started
+
+```sh
+curl -s https://raw.githubusercontent.com/scheleaap/env-config/master/install.sh | sh
+```
+
+## Reference information
 
 1) Installation http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-ubuntu
 2) Basis-Playbook local http://ansible.pickle.io/post/86598332429/running-ansible-playbook-in-localhost
