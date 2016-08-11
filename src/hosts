@@ -1,0 +1,6 @@
+[servers]
+maaskant.info
+#raspberrypi
+
+[desktops]
+localhost ansible_connection=local

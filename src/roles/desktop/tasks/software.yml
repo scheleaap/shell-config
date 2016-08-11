@@ -1,10 +1,13 @@
 ---
-- name: "Install additional packages"
+- name: "Refresh apt cache"
+  apt:
+    update_cache: true
+- name: "Install other desktop packages"
   apt:
     name: "{{ item }}"
   with_items:
-    - htop
-    - joe
+    - chromium-browser
+    - thunderbird
 - name: "Install Atom"
   apt:
     deb: https://atom.io/download/deb

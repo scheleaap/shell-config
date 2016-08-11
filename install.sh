@@ -1,5 +1,8 @@
 #!/bin/bash
 
+repo_name=env-config
+repo_url=https://github.com/scheleaap/${repo_name}.git
+
 # Parse command-line arguments
 # Source: http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
 INSTALL_ANSIBLE="true"
@@ -59,10 +62,10 @@ fi
 if [[ "$CLONE_REPO" == "true" ]]
 then
   echo "Cloning git repository"
-  git clone --depth=1 http://TODO.git
+  git clone --depth=1 ${repo_url}
 fi
 
-cd ds-developer-machine/ansible
+cd ${repo_name}/src
 
 if [[ "$EDIT_CONFIG" == "true" ]]
 then

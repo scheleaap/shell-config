@@ -1,5 +1,4 @@
 ---
-
 - hosts: all
   remote_user: "{{ user_username }}"
   become: true
@@ -8,10 +7,10 @@
   roles:
     - role: common
 
-- hosts: other
+- hosts: desktops
   remote_user: "{{ user_username }}"
   become: true
   become_user: root
   become_method: sudo
   roles:
-    - role: my
+    - role: desktop

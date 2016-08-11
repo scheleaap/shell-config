@@ -1,6 +1,0 @@
-[server]
-#localhost ansible_connection=local
-
-[wout_pcs]
-# Uncomment the following line to enable scheleaap's configuration
-#localhost ansible_connection=local

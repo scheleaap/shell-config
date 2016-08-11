@@ -1,4 +1,9 @@
 ---
+- name: "Install Pidgin"
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - pidgin
 - name: "Send messages with Ctrl+Enter instead of Enter"
   blockinfile:
     dest: /home/{{ user_username }}/.gtkrc-2.0

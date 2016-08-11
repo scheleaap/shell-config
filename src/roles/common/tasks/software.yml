@@ -1,0 +1,21 @@
+---
+- name: "Refresh apt cache"
+  apt:
+    update_cache: true
+- name: "Install common packages"
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - curl
+    - wget
+    - git
+    - ssh
+    - htop
+    - joe
+# - name: "Install Java"
+#   apt:
+#     name: "{{ item }}"
+#   with_items:
+#     - openjdk-8-jdk
+#     - openjdk-8-jre
+#     - icedtea-8-plugin
