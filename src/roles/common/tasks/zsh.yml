@@ -1,4 +1,9 @@
 ---
+- name: "Install zsh"
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - zsh
 - name: "Check out the zsh configuration repository"
   git:
     repo: https://scheleaap@github.com/scheleaap/zsh-config.git
