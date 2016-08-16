@@ -1,8 +1,8 @@
 [credential]
 	helper = cache --timeout={{ git_cache_timeout }}
 [user]
-	email = {{ user_email }}
-	name = {{ user_full_name }}
+	email = {{ git_user_email }}
+	name = {{ git_user_name }}
 [push]
 	default = simple
 [alias]
