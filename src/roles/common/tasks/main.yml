@@ -16,3 +16,4 @@
     dest: /home/{{ user_username }}/.gitconfig
     owner: "{{ user_username }}"
     group: "{{ user_username }}"
+- include: zsh.yml

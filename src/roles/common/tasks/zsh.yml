@@ -1,0 +1,12 @@
+---
+- name: "Check out the zsh configuration repository"
+  git:
+    repo: https://scheleaap@github.com/scheleaap/zsh-config.git
+    dest: /home/{{ user_username }}/.zsh
+- name: "Set up .zshrc"
+  file:
+    state: link
+    src: /home/{{ user_username }}/.zsh/zshrc
+    dest: /home/{{ user_username }}/.zshrc
+    owner: "{{ user_username }}"
+    group: "{{ user_username }}"
