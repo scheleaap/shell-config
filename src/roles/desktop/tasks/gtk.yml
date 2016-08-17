@@ -24,16 +24,11 @@
           color: @dark_fg_color;
       }
       TerminalWindow .notebook {
-          border: 0;
           padding: 0;
       }
-      TerminalWindow .notebook tab.top:active {
-          border-image: none;
-          background-color: alpha(white, 0.4);
-      }
       TerminalWindow .notebook tab.top {
-          border-width: 0;
-          background-image: none;
-          background-color: @dark_b!g_color;
-          color: gray;
+          background-color: alpha(white, 0.1);
+      }
+      TerminalWindow .notebook tab.top:active {
+          background-color: alpha(white, 0.4);
       }
