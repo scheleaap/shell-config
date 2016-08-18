@@ -45,17 +45,20 @@
         gtk-key-bindings: GtkBindingTreeView;
       }
 - name: "Make the numpad work like the way it works on Windows"
+  become: true
   lineinfile:
     dest: /etc/default/keyboard
     regexp: ^XKBOPTIONS=
     line: XKBOPTIONS="numpad:microsoft"
 - name: "Copy the custom keyboard layout definition to symbols/wout"
+  become: true
   copy:
     src: keyboard_layout
     dest: /usr/share/X11/xkb/symbols/wout
     owner: root
     group: root
 - name: "Register the custom keyboard layout in rules/evdev.xml"
+  become: true
   blockinfile:
     dest: /usr/share/X11/xkb/rules/evdev.xml
     create: no
@@ -73,4 +76,5 @@
         </variantList>
       </layout>
 - name: "Compile the keyboard layout data"
+  become: true
   shell: "dpkg-reconfigure xkb-data"

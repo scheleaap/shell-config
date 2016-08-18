@@ -1,8 +1,10 @@
 ---
 - name: "Create group"
+  become: true
   group:
     name: "{{ user_username }}"
 - name: "Create user"
+  become: true
   user:
     name: "{{ user_username }}"
     comment: "{{ user_full_name }}"

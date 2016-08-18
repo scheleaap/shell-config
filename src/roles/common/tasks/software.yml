@@ -1,8 +1,10 @@
 ---
 - name: "Refresh apt cache"
+  become: true
   apt:
     update_cache: true
 - name: "Install common packages"
+  become: true
   apt:
     name: "{{ item }}"
   with_items:
@@ -13,6 +15,7 @@
     - htop
     - joe
 # - name: "Install Java"
+#   become: true
 #   apt:
 #     name: "{{ item }}"
 #   with_items:

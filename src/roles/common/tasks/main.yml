@@ -8,9 +8,6 @@
 #  copy:
 #    src: bash_aliases
 #    dest: /home/{{ user_username }}/.bash_aliases
-#    owner: "{{ user_username }}"
-#    group: "{{ user_username }}"
-- name: ".gitconfig"
   template:
     src: gitconfig
     dest: /home/{{ user_username }}/.gitconfig

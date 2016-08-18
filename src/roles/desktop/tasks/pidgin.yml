@@ -8,8 +8,6 @@
   blockinfile:
     dest: /home/{{ user_username }}/.gtkrc-2.0
     create: yes
-    owner: "{{ user_username }}"
-    group: "{{ user_username }}"
     marker: "# {mark} ANSIBLE MANAGED BLOCK - Pidgin Ctrl+Enter"
     block: |
       binding "piding-bindings-wout" {

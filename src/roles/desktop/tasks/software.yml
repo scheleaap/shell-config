@@ -1,14 +1,17 @@
 ---
 - name: "Refresh apt cache"
+  become: true
   apt:
     update_cache: true
 - name: "Install other desktop packages"
+  become: true
   apt:
     name: "{{ item }}"
   with_items:
     - chromium-browser
     - thunderbird
 - name: "Install Atom"
+  become: true
   apt:
     deb: https://atom.io/download/deb
 - name: Ensure /home/{{ user_username }}/.atom exists

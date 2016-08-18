@@ -7,14 +7,10 @@
   file:
     path: /home/{{ user_username }}/.config/gtk-3.0
     state: directory
-    owner: "{{ user_username }}"
-    group: "{{ user_username }}"
 - name: "Make tabs in gnome-terminal easier to distinguish"
   blockinfile:
     dest: /home/{{ user_username }}/.config/gtk-3.0/gtk.css
     create: yes
-    owner: "{{ user_username }}"
-    group: "{{ user_username }}"
     marker: "/* {mark} ANSIBLE MANAGED BLOCK - gnome-terminal tabs */"
     block: |
       TerminalWindow,

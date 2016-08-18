@@ -1,5 +1,6 @@
 ---
 - name: "Install zsh"
+  become: true
   apt:
     name: "{{ item }}"
   with_items:
@@ -13,5 +14,3 @@
     state: link
     src: /home/{{ user_username }}/.zsh/zshrc
     dest: /home/{{ user_username }}/.zshrc
-    owner: "{{ user_username }}"
-    group: "{{ user_username }}"
