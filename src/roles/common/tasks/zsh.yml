@@ -12,5 +12,5 @@
 - name: "Set up .zshrc"
   file:
     state: link
-    src: /home/{{ user_username }}/.zsh/zshrc
+    src: /home/{{ user_username }}/.zsh/.zshrc
     dest: /home/{{ user_username }}/.zshrc
