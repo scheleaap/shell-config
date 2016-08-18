@@ -14,3 +14,8 @@
     state: link
     src: /home/{{ user_username }}/.zsh/.zshrc
     dest: /home/{{ user_username }}/.zshrc
+- name: "Configure zsh as the default shell"
+  become: true
+  user:
+    name: "{{ user_username }}"
+    shell: /usr/bin/zsh
