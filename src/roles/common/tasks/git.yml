@@ -1,47 +1,16 @@
 ---
-- git_config:
-    name: credential.helper
-    value: "cache --timeout={{ git_cache_timeout }}"
-    scope: global
-- git_config:
-    name: push.default
-    value: simple
-    scope: global
-
-# User configuration
-- name: "Git user configuration"
+- name: "Configure Git"
   git_config:
-    name: user.email
-    value: "{{ git_user_email }}"
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
     scope: global
-  git_config:
-    name: user.name
-    value: "{{ git_user_name }}"
-    scope: global
-
-# Aliases
-- git_config:
-    name: alias.co
-    value: checkout
-    scope: global
-- git_config:
-    name: alias.br
-    value: branch
-    scope: global
-- git_config:
-    name: alias.ci
-    value: commit
-    scope: global
-- git_config:
-    name: alias.st
-    value: status
-    scope: global
-- git_config:
-    name: alias.unstage
-    value: reset HEAD --
-    scope: global
-
-#- git_config:
-#    name: core.editor
-#    value: atom --wait
-#    scope: global
+  with_items:
+    - { name: "credential.helper", value: "cache --timeout={{ git_cache_timeout }}" }
+    - { name: "push.default", value: "simple" }
+    - { name: "user.name", value: "{{ git_user_name }}" }
+    - { name: "user.email", value: "{{ git_user_email }}" }
+    - { name: "alias.co", value: "checkout" }
+    - { name: "alias.br", value: "branch" }
+    - { name: "alias.ci", value: "commit" }
+    - { name: "alias.st", value: "status" }
+    - { name: "alias.unstage", value: "reset HEAD --" }

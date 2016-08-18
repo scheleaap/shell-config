@@ -34,3 +34,8 @@
           background-color: rgba(0, 0, 0, 0);
         }
       }
+- name: "Configure Atom as the git editor"
+  git_config:
+    name: core.editor
+    value: atom --wait
+    scope: global
