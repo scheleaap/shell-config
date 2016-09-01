@@ -1,5 +1,6 @@
 ---
 - name: "Install Pidgin"
+  become: true
   apt:
     name: "{{ item }}"
   with_items:
