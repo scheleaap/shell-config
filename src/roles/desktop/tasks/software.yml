@@ -10,6 +10,7 @@
   with_items:
     - chromium-browser
     - thunderbird
+    - gitg
 - name: "Install Atom"
   become: true
   apt:
