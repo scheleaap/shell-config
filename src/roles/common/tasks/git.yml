@@ -14,3 +14,7 @@
     - { name: "alias.ci", value: "commit" }
     - { name: "alias.st", value: "status" }
     - { name: "alias.unstage", value: "reset HEAD --" }
+    - { name: "merge.ff", value: "false" }
+    - { name: "pull.rebase", value: "true" }
+    - { name: "push.followTags", value: "true" }
+    - { name: "tag.sort", value: "version:refname" }
