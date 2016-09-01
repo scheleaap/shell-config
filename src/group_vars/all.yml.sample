@@ -4,3 +4,11 @@ user_full_name: I Am
 git_user_email: user@example.com
 git_user_name: I Am
 git_cache_timeout: 32400
+
+# Set this value if you want to override the Git configuration for the zsh
+# repository.
+# zsh_git_user_name: I Am
+
+# Set this value if you want to override the Git configuration for the zsh
+# repository.
+# zsh_git_user_email: user@example.com

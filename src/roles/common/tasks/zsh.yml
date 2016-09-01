@@ -9,6 +9,15 @@
   git:
     repo: https://scheleaap@github.com/scheleaap/zsh-config.git
     dest: /home/{{ user_username }}/.zsh
+- name: "Configure the zsh configuration repository"
+  git_config:
+    repo: /home/{{ user_username }}/.zsh
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    scope: local
+  with_items:
+    - { name: "user.name", value: "{{ zsh_git_user_name }}" }
+    - { name: "user.email", value: "{{ zsh_git_user_email }}" }
 - name: "Set up .zshrc"
   file:
     state: link
