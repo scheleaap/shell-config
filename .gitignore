@@ -1,7 +1,31 @@
+# Python
+*.pyc
+__pycache__/
+
+# Virtualenv
+/bin/
+/etc/
+/include/
+/lib/
+/local/
+/share/
+pip-selfcheck.json
+
+# Vagrant
 .vagrant
+
+# Ansible
 src/group_vars/*.yml
 src/host_vars/*.yml
 src/hosts
-*.log
+site.retry
 *.retry
+vault
+
+# Molecule
+.molecule
+
+# Other
+.cache
+*.log
 *~

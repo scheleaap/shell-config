@@ -1,3 +1,0 @@
----
-zsh_git_user_email: "{{ git_user_email }}"
-zsh_git_user_name: "{{ git_user_name }}"

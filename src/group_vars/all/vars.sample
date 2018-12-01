@@ -1,14 +1,15 @@
 ---
-user_username: user1
-user_full_name: I Am
-git_user_email: user@example.com
-git_user_name: I Am
+user_username: <TODO>
+user_email: <TODO>
+user_full_name: <TODO>
+git_user_email: "{{ user_email }}"
+git_user_name: <TODO>
 git_cache_timeout: 32400
 
 # Set this value if you want to override the Git configuration for the zsh
 # repository.
-# zsh_git_user_name: I Am
+# zsh_git_user_name: <TODO>
 
 # Set this value if you want to override the Git configuration for the zsh
 # repository.
-# zsh_git_user_email: user@example.com
+# zsh_git_user_email: <TODO>

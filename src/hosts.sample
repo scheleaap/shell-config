@@ -1,6 +1,0 @@
-[servers]
-#example.com
-#raspberrypi.local
-
-[desktops]
-#localhost ansible_connection=local

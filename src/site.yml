@@ -1,14 +1,15 @@
 ---
 - hosts: all
-  remote_user: "{{ user_username }}"
+#  remote_user: "{{ login_username }}"
   become_user: root
   become_method: sudo
   roles:
-    - role: common
+    - role: env-common-scheleaap
 
-- hosts: desktops
-  remote_user: "{{ user_username }}"
+- hosts: desktop
+#  remote_user: "{{ login_username }}"
   become_user: root
   become_method: sudo
   roles:
-    - role: desktop
+#    - role: work
+    - role: env-desktop-scheleaap

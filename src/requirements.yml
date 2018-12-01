@@ -1,0 +1,10 @@
+---
+
+- src: https://github.com/scheleaap/ansible-role-env-common.git
+  version: master
+  name: env-common-scheleaap
+- src: https://github.com/scheleaap/ansible-role-env-desktop.git
+  version: master
+  name: env-desktop-scheleaap
+#- src: http://<host>/<user>/ansible-role-work/repository/archive.tar.gz?ref=master
+#  name: work

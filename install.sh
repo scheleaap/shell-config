@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repo_name=env-config
+repo_name=work-infrastructure
 repo_url=https://github.com/scheleaap/${repo_name}.git
 
 # Parse command-line arguments
@@ -76,6 +76,9 @@ fi
 
 if [[ "$RUN_PLAYBOOK" == "true" ]]
 then
+  echo "Installing Ansible roles"
+  ansible-galaxy install -r requirements.yml -p roles/
+
   echo "Running Ansible playbook"
   ansible-playbook -i "hosts" site.yml --ask-sudo
 fi
