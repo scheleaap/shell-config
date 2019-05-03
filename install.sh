@@ -70,8 +70,8 @@ cd ${repo_name}/src
 if [[ "$EDIT_CONFIG" == "true" ]]
 then
   echo "Allowing user to edit the Ansible configuration"
-  cp group_vars/server.yml.sample group_vars/server.yml
-  nano group_vars/server.yml
+  cp group_vars/all/vars.yml.sample group_vars/all/vars.yml
+  nano group_vars/all/vars.yml
 fi
 
 if [[ "$RUN_PLAYBOOK" == "true" ]]
@@ -80,5 +80,5 @@ then
   ansible-galaxy install -r requirements.yml -p roles/
 
   echo "Running Ansible playbook"
-  ansible-playbook -i "hosts" site.yml --ask-sudo
+  ansible-playbook -i "hosts" site.yml --ask-become-pass
 fi

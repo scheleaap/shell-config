@@ -15,9 +15,9 @@ pip-selfcheck.json
 .vagrant
 
 # Ansible
-src/group_vars/*.yml
-src/host_vars/*.yml
-src/hosts
+src/group_vars/all/*.yml
+src/host_vars/all/*.yml
+src/roles
 site.retry
 *.retry
 vault
