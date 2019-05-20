@@ -5,3 +5,5 @@ localhost ansible_connection=local
 [desktop]
 localhost
 
+[docker]
+localhost
