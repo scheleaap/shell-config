@@ -3,7 +3,8 @@
 ## Getting started
 
 ```sh
-curl -s https://raw.githubusercontent.com/scheleaap/env-config/master/install.sh | bash
+sudo apt install curl git && \
+curl -s https://raw.githubusercontent.com/scheleaap/work-infrastructure/master/install.sh | bash
 ```
 
 ## Reference information
