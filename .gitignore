@@ -2,28 +2,16 @@
 *.pyc
 __pycache__/
 
-# Virtualenv
-/bin/
-/etc/
-/include/
-/lib/
-/local/
-/share/
-pip-selfcheck.json
-
 # Vagrant
 .vagrant
 
 # Ansible
-src/group_vars/all/*.yml
-src/host_vars/all/*.yml
-src/roles
+group_vars/all/*.yml
+host_vars/all/*.yml
+roles
 site.retry
 *.retry
 vault
-
-# Molecule
-.molecule
 
 # Other
 .cache
