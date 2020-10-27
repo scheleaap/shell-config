@@ -6,7 +6,7 @@
   version: master
   name: env-desktop-scheleaap
 - src: https://github.com/nickjj/ansible-docker.git
-  version: "v1.8.0"
+  version: "v1.9.2"
   name: docker
 #- src: http://<host>/<user>/ansible-role-work/repository/archive.tar.gz?ref=master
 #  name: work
