@@ -54,13 +54,13 @@ then
     git clone --depth=1 ${repo_url} $HOME/${repo_name}
   fi
 
-  cd $HOME/${repo_name}/src
+  cd $HOME/${repo_name}
   pipenv sync
 fi
 
 if [[ "$EDIT_CONFIG" == "true" ]]
 then
-  cd $HOME/${repo_name}/src
+  cd $HOME/${repo_name}
 
   echo "Allowing user to edit the Ansible configuration"
   cp group_vars/all/vars.yml.sample group_vars/all/vars.yml
