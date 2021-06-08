@@ -69,7 +69,7 @@ fi
 
 if [[ "$RUN_PLAYBOOK" == "true" ]]
 then
-  cd $HOME/${repo_name}/src
+  cd $HOME/${repo_name}
 
   echo "Installing Ansible roles"
   pipenv run ansible-galaxy install -r requirements.yml -p roles/
