@@ -1,7 +1,7 @@
 ---
 collections:
 - name: community.general
-  version: 5.7.0
+  version: 9.0.1
 
 roles:
 - src: https://github.com/scheleaap/ansible-role-env-common.git
@@ -11,7 +11,7 @@ roles:
   version: master
   name: env-desktop-scheleaap
 - src: https://github.com/nickjj/ansible-docker.git
-  version: "v1.9.2"
+  version: "v2.4.0"
   name: docker
 #- src: http://<host>/<user>/ansible-role-work/repository/archive.tar.gz?ref=master
 #  name: work
